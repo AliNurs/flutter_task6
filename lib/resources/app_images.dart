@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class AppImages {
   static const String profile = 'images/profile.png';
   static const String developer1 = 'images/developer1.png';
@@ -22,10 +20,4 @@ class AppImages {
 //       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmw63Ww9f0beeQO8fRJhMYSG067tHahZTUXulydlAFcKlX2uu0KELh3oN4oTosh4ZTGRQ&usqp=CAU');
 //   static Image photo6 = Image.network(
 //       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpJPUBhfeHKxRjvvAjfupWexHtGPq-dG5r73Pn_UMhNCyF9H7i18R_XBdCcs7wYHbnvYg&usqp=CAU');
-//   static Image photo7 = Image.network('');
-//   static Image photo8 = Image.network('');
-//   static Image photo9 = Image.network('');
-//   static Image photo10 = Image.network('');
-//   static Image photo11 = Image.network('');
-//   static Image photo12 = Image.network('');
 // }

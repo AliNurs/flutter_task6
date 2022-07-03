@@ -12,18 +12,30 @@ class FriendSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: [
+      children: const [
         FriendClass(
           name: 'Corey George',
           image: AppImages.developer1,
+        ),
+        Divider(
+          color: AppColors.dividerColor,
+          indent: 65,
         ),
         FriendClass(
           name: 'Ahmad Vetrovs',
           image: AppImages.developer2,
         ),
+        Divider(
+          color: AppColors.dividerColor,
+          indent: 65,
+        ),
         FriendClass(
           name: 'Cristofer Workman',
           image: AppImages.developer3,
+        ),
+        Divider(
+          color: AppColors.dividerColor,
+          indent: 65,
         ),
         FriendClass(
           name: 'Tiana Korsgaard',
@@ -43,39 +55,31 @@ class FriendClass extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        ListTile(
-          leading: Container(
-            height: 40.0,
-            width: 40.0,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(image),
-                fit: BoxFit.fill,
-              ),
-              shape: BoxShape.circle,
-            ),
+    return ListTile(
+      leading: Container(
+        height: 40.0,
+        width: 40.0,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(image),
+            fit: BoxFit.fill,
           ),
-          title: Text(
-            name,
-            style: TextStyles.black16w400,
-          ),
-          subtitle: Text(
-            'Developer',
-            style: TextStyles.grey12w400,
-          ),
-          trailing: IconButton(
-            icon: Icon(Icons.close_sharp),
-            color: AppColors.closeicon,
-            onPressed: () {},
-          ),
+          shape: BoxShape.circle,
         ),
-        Divider(
-          color: AppColors.dividerColor,
-          indent: 65,
-        ),
-      ],
+      ),
+      title: Text(
+        name,
+        style: TextStyles.black16w400,
+      ),
+      subtitle: Text(
+        'Developer',
+        style: TextStyles.grey12w400,
+      ),
+      trailing: IconButton(
+        icon: Icon(Icons.close_sharp),
+        color: AppColors.closeicon,
+        onPressed: () {},
+      ),
     );
   }
 }
