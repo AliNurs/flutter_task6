@@ -36,7 +36,7 @@ class MyMediaGrid extends StatelessWidget {
                 child: IconButton(
                   onPressed: () {},
                   icon: Icon(
-                    Icons.error,
+                    Icons.close,
                     color: AppColors.bgFFFFFF,
                   ),
                 ),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:practice_project/resources/friends_section.dart';
 import '../themes/app_colors.dart';
 import '../themes/text_styles.dart';
+import 'select_listview.dart';
 
 class CenterSection extends StatelessWidget {
   const CenterSection({Key? key}) : super(key: key);
@@ -22,6 +23,8 @@ class CenterSection extends StatelessWidget {
             'Select type',
             style: TextStyles.black16w400,
           ),
+
+          MyListView(),
           //  ListView.builder(itemBuilder: ,scrollDirection: Axis.horizontal,),
           Divider(
             color: AppColors.dividerColor,
