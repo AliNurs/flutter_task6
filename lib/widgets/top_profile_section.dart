@@ -29,7 +29,7 @@ class ProfileSection extends StatelessWidget {
                 right: 0,
                 child: FloatingActionButton.small(
                     splashColor: Colors.pink,
-                    backgroundColor: AppColors.fbtn6200EE,
+                    backgroundColor: AppColors.button6200EE,
                     onPressed: () {},
                     child: Icon(
                       Icons.add,

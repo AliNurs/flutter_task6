@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practice_project/themes/app_colors.dart';
 
 class MyMediaGrid extends StatelessWidget {
   MyMediaGrid({Key? key}) : super(key: key);
@@ -11,6 +12,7 @@ class MyMediaGrid extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(18),
       child: GridView.builder(
+        physics: NeverScrollableScrollPhysics(),
         gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
             maxCrossAxisExtent: 130,
             childAspectRatio: 2 / 2,
@@ -24,7 +26,7 @@ class MyMediaGrid extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(6),
                   image: DecorationImage(
-                    image: AssetImage("images/my.jpg"),
+                    image: AssetImage("images/Rectangle12.png"),
                     fit: BoxFit.fill,
                   ),
                 ),
@@ -34,7 +36,8 @@ class MyMediaGrid extends StatelessWidget {
                 child: IconButton(
                   onPressed: () {},
                   icon: Icon(
-                    Icons.close_outlined,
+                    Icons.error,
+                    color: AppColors.bgFFFFFF,
                   ),
                 ),
               ),

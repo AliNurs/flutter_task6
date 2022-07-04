@@ -9,62 +9,67 @@ class CenterSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      shrinkWrap: true,
-      // crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Divider(
-          color: Colors.black,
-        ),
-        SizedBox(
-          height: 12,
-        ),
-        Text(
-          'Select type',
-          style: TextStyles.black16w400,
-        ),
-        //  ListView.builder(itemBuilder: ,scrollDirection: Axis.horizontal,),
-        Divider(
-          color: Colors.black,
-        ),
-        Text(
-          'Friends',
-          style: TextStyles.black16w400,
-        ),
+    return Padding(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Divider(
+            color: AppColors.dividerColor,
+          ),
 
-        FriendSection(),
+          Text(
+            'Select type',
+            style: TextStyles.black16w400,
+          ),
+          //  ListView.builder(itemBuilder: ,scrollDirection: Axis.horizontal,),
+          Divider(
+            color: AppColors.dividerColor,
+          ),
+          Text(
+            'Friends',
+            style: TextStyles.black16w400,
+          ),
 
-        SizedBox(
-          height: 36,
-          width: double.infinity,
-          child: ElevatedButton.icon(
-            style: ElevatedButton.styleFrom(
-              primary: AppColors.bgFFFFFF,
-              elevation: 2,
-            ),
-            onPressed: () {},
-            label: Text(
-              'ADD FREND',
-              style: TextStyle(color: AppColors.w500size20),
-            ),
-            icon: Icon(
-              Icons.add,
-              color: AppColors.w500size20,
+          Container(
+            height: 280,
+            child: FriendSection(),
+          ),
+          SizedBox(
+            height: 38,
+          ),
+          SizedBox(
+            height: 36,
+            width: double.infinity,
+            child: ElevatedButton.icon(
+              style: ElevatedButton.styleFrom(
+                primary: AppColors.bgFFFFFF,
+                elevation: 2,
+              ),
+              onPressed: () {},
+              label: Text(
+                'ADD FREND',
+                style: TextStyle(color: AppColors.w500size20),
+              ),
+              icon: Icon(
+                Icons.add,
+                color: AppColors.w500size20,
+              ),
             ),
           ),
-        ),
-        SizedBox(
-          height: 16,
-        ),
-        Divider(
-          color: AppColors.dividerColor,
-          // indent: 65,
-        ),
-        Text(
-          'My media',
-          style: TextStyles.black16w400.copyWith(fontSize: 24),
-        ),
-      ],
+          SizedBox(
+            height: 16,
+          ),
+          Divider(
+            color: AppColors.dividerColor,
+            // indent: 65,
+          ),
+          Text(
+            'My media',
+            style: TextStyles.black16w400.copyWith(fontSize: 24),
+          ),
+        ],
+      ),
     );
   }
 }

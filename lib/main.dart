@@ -61,11 +61,63 @@ class _MyHomePageState extends State<MyHomePage> {
         elevation: 1,
       ),
       body: ListView(
-        shrinkWrap: true,
         children: [
           const ProfileSection(),
           const CenterSection(),
-          MyMediaGrid(),
+          Container(height: 360, width: 350, child: MyMediaGrid()),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Row(
+                children: [
+                  SizedBox(
+                    height: 36,
+                    width: 156,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          primary: AppColors.button6200EE),
+                      onPressed: () {},
+                      child: Text(
+                        'DELETE',
+                        style: TextStyle(
+                            color: AppColors.bgFFFFFF,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 16),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 16,
+                  ),
+                  SizedBox(
+                    height: 36,
+                    width: 156,
+                    child: ElevatedButton(
+                      style:
+                          ElevatedButton.styleFrom(primary: AppColors.bgFFFFFF),
+                      onPressed: () {},
+                      child: Text(
+                        'ADD',
+                        style: TextStyle(
+                            color: AppColors.button6200EE,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 16),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 24,
+          ),
+          Divider(
+            thickness: 2,
+            indent: 160,
+            endIndent: 160,
+            color: Colors.black,
+          ),
         ],
       ),
     );

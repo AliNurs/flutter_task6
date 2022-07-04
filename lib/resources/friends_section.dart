@@ -4,48 +4,6 @@ import '../themes/app_colors.dart';
 import '../themes/text_styles.dart';
 import 'app_images.dart';
 
-class FriendSection extends StatelessWidget {
-  const FriendSection({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: const [
-        FriendClass(
-          name: 'Corey George',
-          image: AppImages.developer1,
-        ),
-        Divider(
-          color: AppColors.dividerColor,
-          indent: 65,
-        ),
-        FriendClass(
-          name: 'Ahmad Vetrovs',
-          image: AppImages.developer2,
-        ),
-        Divider(
-          color: AppColors.dividerColor,
-          indent: 65,
-        ),
-        FriendClass(
-          name: 'Cristofer Workman',
-          image: AppImages.developer3,
-        ),
-        Divider(
-          color: AppColors.dividerColor,
-          indent: 65,
-        ),
-        FriendClass(
-          name: 'Tiana Korsgaard',
-          image: AppImages.developer4,
-        ),
-      ],
-    );
-  }
-}
-
 class FriendClass extends StatelessWidget {
   const FriendClass({Key? key, required this.image, required this.name})
       : super(key: key);
@@ -80,6 +38,56 @@ class FriendClass extends StatelessWidget {
         color: AppColors.closeicon,
         onPressed: () {},
       ),
+    );
+  }
+}
+
+class FriendSection extends StatelessWidget {
+  const FriendSection({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: const [
+        Expanded(
+          child: FriendClass(
+            name: 'Corey George',
+            image: AppImages.developer1,
+          ),
+        ),
+        Divider(
+          color: AppColors.dividerColor,
+          indent: 65,
+        ),
+        Expanded(
+          child: FriendClass(
+            name: 'Ahmad Vetrovs',
+            image: AppImages.developer2,
+          ),
+        ),
+        Divider(
+          color: AppColors.dividerColor,
+          indent: 65,
+        ),
+        Expanded(
+          child: FriendClass(
+            name: 'Cristofer Workman',
+            image: AppImages.developer3,
+          ),
+        ),
+        Divider(
+          color: AppColors.dividerColor,
+          indent: 65,
+        ),
+        Expanded(
+          child: FriendClass(
+            name: 'Tiana Korsgaard',
+            image: AppImages.developer4,
+          ),
+        ),
+      ],
     );
   }
 }
