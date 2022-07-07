@@ -12,6 +12,7 @@ class MyListView extends StatelessWidget {
       children: [
         const Divider(
           color: AppColors.dividerColor,
+          thickness: 1,
           indent: 18,
           endIndent: 18,
         ),

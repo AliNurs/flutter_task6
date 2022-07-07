@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practice_project/themes/app_colors.dart';
 
 import 'resources/app_images.dart';
 import 'part widgets/bottom_buttons.dart';
@@ -13,6 +14,7 @@ class SocialMedia extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.bgFFFFFF,
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {},
@@ -35,7 +37,7 @@ class SocialMedia extends StatelessWidget {
           MyListView(),
           const CenterSection(),
           Container(
-            height: 380,
+            height: 350,
             child: MyMediaGrid(),
           ),
           const SizedBox(

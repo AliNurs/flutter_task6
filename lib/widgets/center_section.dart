@@ -16,11 +16,14 @@ class CenterSection extends StatelessWidget {
         children: [
           Divider(
             color: AppColors.dividerColor,
+            thickness: 1,
           ),
+          SizedBox(height: 6),
           Text(
             'Friends',
             style: TextStyles.black16w400.copyWith(letterSpacing: 0.44),
           ),
+          SizedBox(height: 8),
           Container(
             height: 280,
             child: FriendSection(),
@@ -50,6 +53,9 @@ class CenterSection extends StatelessWidget {
           Divider(
             color: AppColors.dividerColor,
             thickness: 2,
+          ),
+          SizedBox(
+            height: 16,
           ),
           Text('My media', style: TextStyles.media24w400),
         ],
