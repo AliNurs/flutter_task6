@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:practice_project/resources/friends_section.dart';
+import 'package:practice_project/part%20widgets/friends_section.dart';
 import '../themes/app_colors.dart';
 import '../themes/text_styles.dart';
 
@@ -14,15 +14,13 @@ class CenterSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          //  ListView.builder(itemBuilder: ,scrollDirection: Axis.horizontal,),
           Divider(
             color: AppColors.dividerColor,
           ),
           Text(
             'Friends',
-            style: TextStyles.black16w400,
+            style: TextStyles.black16w400.copyWith(letterSpacing: 0.44),
           ),
-
           Container(
             height: 280,
             child: FriendSection(),
@@ -39,11 +37,7 @@ class CenterSection extends StatelessWidget {
                 elevation: 2,
               ),
               onPressed: () {},
-              label: Text(
-                'ADD FREND',
-                style: TextStyle(
-                    color: AppColors.w500size20, fontWeight: FontWeight.w500),
-              ),
+              label: Text('ADD FREND', style: TextStyles.elevbtn14w500),
               icon: Icon(
                 Icons.add,
                 color: AppColors.w500size20,
@@ -57,10 +51,7 @@ class CenterSection extends StatelessWidget {
             color: AppColors.dividerColor,
             thickness: 2,
           ),
-          Text(
-            'My media',
-            style: TextStyles.black16w400.copyWith(fontSize: 24),
-          ),
+          Text('My media', style: TextStyles.media24w400),
         ],
       ),
     );

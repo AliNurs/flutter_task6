@@ -107,7 +107,7 @@ class SelectContainer extends StatelessWidget {
             style: TextStyle(
                 // color: Color(0xff000000).withOpacity(0.38),
                 color: isSelected
-                    ? Color(0xff6200EE)
+                    ? AppColors.selectbuttons
                     : Color(0xff000000).withOpacity(0.38),
                 fontSize: 14),
           )),

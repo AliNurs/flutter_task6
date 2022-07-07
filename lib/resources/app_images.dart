@@ -1,10 +1,24 @@
 class AppImages {
   static const String avatar = 'images/avatar.png';
+  // ignore: constant_identifier_names
+  static const String AvatarAdd = 'images/AvatarAdd.png';
   static const String developer1 = 'images/developer1.png';
   static const String developer2 = 'images/developer2.png';
   static const String developer3 = 'images/developer3.png';
   static const String developer4 = 'images/developer4.png';
+  static const String grid1 = 'images/grid1.png';
+  static const String grid2 = 'images/grid1.png';
+  static const String grid3 = 'images/grid1.png';
+  static const String grid4 = 'images/grid1.png';
+  static const String grid5 = 'images/grid1.png';
+  static const String grid6 = 'images/grid1.png';
+  static const String grid7 = 'images/grid1.png';
+  static const String grid8 = 'images/grid1.png';
+  static const String grid9 = 'images/grid1.png';
+  static const String MediaAdd = 'images/MediaAdd.png';
+  static const String menu = 'images/menu.png';
 }
+
 
 
 // class AppImages {

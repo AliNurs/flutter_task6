@@ -30,9 +30,9 @@ class ProfileSection extends StatelessWidget {
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.white, width: 2),
                       shape: BoxShape.circle,
-                      color: AppColors.button6200EE,
+                      color: AppColors.selectbuttons,
                     ),
-                    child: Image.asset('images/AvatarAdd.png'),
+                    child: Image.asset(AppImages.AvatarAdd),
                   ),
                 ),
               ),

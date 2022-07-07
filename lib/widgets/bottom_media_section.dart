@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:practice_project/themes/app_colors.dart';
 
 class MyMediaGrid extends StatelessWidget {
   MyMediaGrid({
@@ -43,8 +42,8 @@ class MyMediaGrid extends StatelessWidget {
                 ),
               ),
               Positioned(
-                right: 3,
-                top: 3,
+                right: 5,
+                top: 5,
                 child: InkWell(
                     onTap: () {}, child: Image.asset('images/MediaAdd.png')),
               ),

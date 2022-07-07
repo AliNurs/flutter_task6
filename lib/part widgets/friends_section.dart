@@ -32,7 +32,8 @@ class FriendClass extends StatelessWidget {
         ),
         subtitle: Text(
           'Developer',
-          style: TextStyles.grey12w400,
+          style:
+              TextStyles.grey12w400.copyWith(fontSize: 14, letterSpacing: 0.25),
         ),
         trailing: IconButton(
           icon: Icon(Icons.close_sharp),

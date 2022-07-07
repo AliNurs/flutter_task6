@@ -13,4 +13,22 @@ abstract class TextStyles {
       fontSize: 12,
       fontWeight: FontWeight.w400,
       color: Color(0xff666666));
+  static const TextStyle profile20w500 = TextStyle(
+      letterSpacing: 0.15,
+      height: 1.4,
+      fontSize: 20,
+      fontWeight: FontWeight.w500,
+      color: Color(0xff000000));
+  static const TextStyle elevbtn14w500 = TextStyle(
+      letterSpacing: 1.25,
+      height: 1.14,
+      fontSize: 14,
+      fontWeight: FontWeight.w500,
+      color: Color(0xff000000));
+  static const TextStyle media24w400 = TextStyle(
+      letterSpacing: 0.18,
+      height: 1,
+      fontSize: 24,
+      fontWeight: FontWeight.w400,
+      color: Color(0xff000000));
 }
