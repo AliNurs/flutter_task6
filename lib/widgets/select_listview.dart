@@ -1,37 +1,71 @@
 import 'package:flutter/material.dart';
 
+import '../themes/app_colors.dart';
+import '../themes/text_styles.dart';
+
 class MyListView extends StatelessWidget {
-  const MyListView({Key? key}) : super(key: key);
+  MyListView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 50,
+    return Column(
+      children: [
+        const Divider(
+          color: AppColors.dividerColor,
+          indent: 18,
+          endIndent: 18,
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+          child: Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              'Select type',
+              style: TextStyles.black16w400.copyWith(letterSpacing: 0.44),
+            ),
+          ),
+        ),
+        const SelectTypeLight(),
+      ],
+    );
+  }
+}
 
-      //color: Colors.lightGreenAccent.shade700,
+class SelectTypeLight extends StatefulWidget {
+  const SelectTypeLight({Key? key}) : super(key: key);
+
+  @override
+  State<SelectTypeLight> createState() => _SelectTypeLightState();
+}
+
+class _SelectTypeLightState extends State<SelectTypeLight> {
+  final List<String> type = [
+    'Bold',
+    'Mediym',
+    'Light',
+    'Back',
+    'Mediym',
+    'Regular',
+  ];
+
+  int selectedIndex = 1;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 32,
       child: ListView.builder(
-        // shrinkWrap: true,
-        itemCount: 10,
+        padding: EdgeInsets.symmetric(horizontal: 16),
+        itemCount: type.length,
         scrollDirection: Axis.horizontal,
         itemBuilder: ((context, index) {
-          return Row(
-            children: [
-              RepeatScrolList(
-                type: 'Bold',
-              ),
-              RepeatScrolList(
-                type: 'Mediym',
-              ),
-              RepeatScrolList(
-                type: 'Light',
-              ),
-              RepeatScrolList(
-                type: 'Back',
-              ),
-              RepeatScrolList(
-                type: 'Regular',
-              ),
-            ],
+          return SelectContainer(
+            title: type[index],
+            isSelected: selectedIndex == index,
+            onTap: () {
+              selectedIndex = index;
+              setState(() {});
+            },
           );
         }),
       ),
@@ -39,23 +73,45 @@ class MyListView extends StatelessWidget {
   }
 }
 
-class RepeatScrolList extends StatelessWidget {
-  const RepeatScrolList({Key? key, required this.type}) : super(key: key);
+class SelectContainer extends StatelessWidget {
+  const SelectContainer(
+      {Key? key,
+      required this.title,
+      required this.isSelected,
+      required this.onTap})
+      : super(key: key);
 
-  final String type;
+  final String title;
+  final bool isSelected;
+  final Function() onTap;
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return GestureDetector(
+      onTap: onTap,
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.grey.shade300,
+          // color: Colors.grey.shade200,
+          color: isSelected ? Color(0xffF2E7FE) : Colors.grey.shade200,
+          border: isSelected
+              ? Border.all(color: Color(0xffDBB2FF), width: 1)
+              : null,
           borderRadius: BorderRadius.circular(68),
         ),
-        margin: EdgeInsets.only(left: 8, right: 8),
-        child: Center(child: Text(type)),
-        height: 32,
-        width: 60,
+        margin: EdgeInsets.only(right: 8),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 12),
+          child: Center(
+              child: Text(
+            title,
+            style: TextStyle(
+                // color: Color(0xff000000).withOpacity(0.38),
+                color: isSelected
+                    ? Color(0xff6200EE)
+                    : Color(0xff000000).withOpacity(0.38),
+                fontSize: 14),
+          )),
+        ),
       ),
     );
   }

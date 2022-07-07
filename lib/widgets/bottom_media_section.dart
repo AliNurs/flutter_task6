@@ -2,17 +2,28 @@ import 'package:flutter/material.dart';
 import 'package:practice_project/themes/app_colors.dart';
 
 class MyMediaGrid extends StatelessWidget {
-  MyMediaGrid({Key? key}) : super(key: key);
+  MyMediaGrid({
+    Key? key,
+  }) : super(key: key);
 
-  final List<Map> myMedia =
-      List.generate(9, (index) => {"id": index, "": "$index"}).toList();
+  List<String> image = [
+    "images/grid1.png",
+    "images/grid2.png",
+    "images/grid3.png",
+    "images/grid4.png",
+    "images/grid5.png",
+    "images/grid6.png",
+    "images/grid7.png",
+    "images/grid8.png",
+    "images/grid9.png",
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(18),
+      padding: const EdgeInsets.symmetric(horizontal: 18),
       child: GridView.builder(
-        physics: NeverScrollableScrollPhysics(),
+        // physics: NeverScrollableScrollPhysics(),
         gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
             maxCrossAxisExtent: 130,
             childAspectRatio: 2 / 2,
@@ -26,20 +37,16 @@ class MyMediaGrid extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(6),
                   image: DecorationImage(
-                    image: AssetImage("images/Rectangle12.png"),
+                    image: AssetImage(image[index]),
                     fit: BoxFit.fill,
                   ),
                 ),
               ),
               Positioned(
-                right: 0,
-                child: IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.close,
-                    color: AppColors.bgFFFFFF,
-                  ),
-                ),
+                right: 3,
+                top: 3,
+                child: InkWell(
+                    onTap: () {}, child: Image.asset('images/MediaAdd.png')),
               ),
             ],
           );

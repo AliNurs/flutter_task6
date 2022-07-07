@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../themes/app_colors.dart';
 import '../themes/text_styles.dart';
-import 'app_images.dart';
 
 class FriendClass extends StatelessWidget {
   const FriendClass({Key? key, required this.image, required this.name})
@@ -13,81 +12,65 @@ class FriendClass extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: Container(
-        height: 40.0,
-        width: 40.0,
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(image),
-            fit: BoxFit.fill,
+    return InkWell(
+      onTap: () {},
+      child: ListTile(
+        leading: Container(
+          height: 40.0,
+          width: 40.0,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(image),
+              fit: BoxFit.fill,
+            ),
+            shape: BoxShape.circle,
           ),
-          shape: BoxShape.circle,
         ),
-      ),
-      title: Text(
-        name,
-        style: TextStyles.black16w400,
-      ),
-      subtitle: Text(
-        'Developer',
-        style: TextStyles.grey12w400,
-      ),
-      trailing: IconButton(
-        icon: Icon(Icons.close_sharp),
-        color: AppColors.closeicon,
-        onPressed: () {},
+        title: Text(
+          name,
+          style: TextStyles.black16w400,
+        ),
+        subtitle: Text(
+          'Developer',
+          style: TextStyles.grey12w400,
+        ),
+        trailing: IconButton(
+          icon: Icon(Icons.close_sharp),
+          color: AppColors.closeicon,
+          onPressed: () {},
+        ),
       ),
     );
   }
 }
 
 class FriendSection extends StatelessWidget {
-  const FriendSection({
+  FriendSection({
     Key? key,
   }) : super(key: key);
 
+  List<String> name = [
+    'Corey George',
+    'Ahmad Vetrovs',
+    'Cristofer Workman',
+    'Tiana Korsgaard'
+  ];
+
+  List<String> image = [
+    'images/developer1.png',
+    'images/developer2.png',
+    'images/developer3.png',
+    'images/developer4.png',
+  ];
+
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: const [
-        Expanded(
-          child: FriendClass(
-            name: 'Corey George',
-            image: AppImages.developer1,
-          ),
-        ),
-        Divider(
-          color: AppColors.dividerColor,
-          indent: 65,
-        ),
-        Expanded(
-          child: FriendClass(
-            name: 'Ahmad Vetrovs',
-            image: AppImages.developer2,
-          ),
-        ),
-        Divider(
-          color: AppColors.dividerColor,
-          indent: 65,
-        ),
-        Expanded(
-          child: FriendClass(
-            name: 'Cristofer Workman',
-            image: AppImages.developer3,
-          ),
-        ),
-        Divider(
-          color: AppColors.dividerColor,
-          indent: 65,
-        ),
-        Expanded(
-          child: FriendClass(
-            name: 'Tiana Korsgaard',
-            image: AppImages.developer4,
-          ),
-        ),
-      ],
-    );
+    return ListView.separated(
+        itemBuilder: (context, index) =>
+            FriendClass(image: image[index], name: name[index]),
+        separatorBuilder: (context, index) => SizedBox(
+              height: 10,
+            ),
+        itemCount: name.length);
   }
 }

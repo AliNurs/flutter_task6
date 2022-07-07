@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:practice_project/resources/friends_section.dart';
 import '../themes/app_colors.dart';
 import '../themes/text_styles.dart';
-import 'select_listview.dart';
 
 class CenterSection extends StatelessWidget {
   const CenterSection({Key? key}) : super(key: key);
@@ -15,16 +14,6 @@ class CenterSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Divider(
-            color: AppColors.dividerColor,
-          ),
-
-          Text(
-            'Select type',
-            style: TextStyles.black16w400,
-          ),
-
-          MyListView(),
           //  ListView.builder(itemBuilder: ,scrollDirection: Axis.horizontal,),
           Divider(
             color: AppColors.dividerColor,
@@ -52,7 +41,8 @@ class CenterSection extends StatelessWidget {
               onPressed: () {},
               label: Text(
                 'ADD FREND',
-                style: TextStyle(color: AppColors.w500size20),
+                style: TextStyle(
+                    color: AppColors.w500size20, fontWeight: FontWeight.w500),
               ),
               icon: Icon(
                 Icons.add,
@@ -65,7 +55,7 @@ class CenterSection extends StatelessWidget {
           ),
           Divider(
             color: AppColors.dividerColor,
-            // indent: 65,
+            thickness: 2,
           ),
           Text(
             'My media',

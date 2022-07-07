@@ -1,5 +1,5 @@
 class AppImages {
-  static const String profile = 'images/profile.png';
+  static const String avatar = 'images/avatar.png';
   static const String developer1 = 'images/developer1.png';
   static const String developer2 = 'images/developer2.png';
   static const String developer3 = 'images/developer3.png';

@@ -15,29 +15,26 @@ class ProfileSection extends StatelessWidget {
         children: [
           Stack(
             children: [
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.amber,
-                  borderRadius: BorderRadius.circular(300),
-                ),
-                child: Image.asset(AppImages.profile),
-                height: 118,
-                width: 118,
+              const CircleAvatar(
+                backgroundImage: AssetImage(AppImages.avatar),
+                radius: 59,
               ),
               Positioned(
                 bottom: 0,
                 right: 0,
-                child: FloatingActionButton.small(
-                    splashColor: Colors.pink,
-                    backgroundColor: AppColors.button6200EE,
-                    onPressed: () {},
-                    child: Icon(
-                      Icons.add,
-                      size: 24,
+                child: GestureDetector(
+                  onTap: () {},
+                  child: Container(
+                    height: 36,
+                    width: 36,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.white, width: 2),
+                      shape: BoxShape.circle,
+                      color: AppColors.button6200EE,
                     ),
-                    shape: RoundedRectangleBorder(
-                        side: BorderSide(width: 1.5, color: Colors.white),
-                        borderRadius: BorderRadius.circular(100))),
+                    child: Image.asset('images/AvatarAdd.png'),
+                  ),
+                ),
               ),
             ],
           ),
@@ -51,7 +48,7 @@ class ProfileSection extends StatelessWidget {
           Text(
             'Developer',
             style: TextStyles.grey12w400,
-          )
+          ),
         ],
       ),
     );
